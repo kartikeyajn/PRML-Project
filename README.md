@@ -162,9 +162,9 @@ Select your Python kernel and run all cells from top to bottom. All outputs, plo
 
 ## 👥 Contributors & Acknowledgments
 
-- **Kartikeya Jain** — Student, B.Tech
-- **Ayush Yadav** — Student, B.Tech
+- **Kartikeya Jain** — Student, B.Tech AI&DS 29"
+- **Ayush Yadav** — Student, B.Tech AI&DS 29"
 - **Dr. Pruthwik Mishra** — Course Instructor & Mentor
 - **Dr. Praveen Chandaliya** — Course Instructor & Mentor
 
-*Developed as part of the PAIML Lab Course Curriculum.*
+*Developed as part of the Programming for AIML Lab Course Curriculum.*
