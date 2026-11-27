@@ -72,7 +72,7 @@ flowchart TD
 ### 2. Unsupervised Learning (Cluster Discovery)
 - **KMeans++ ($k=2$):** Without access to class labels, clustering partitioned the data into **Dynamic (walking activities)** vs. **Static (sitting, standing, laying)** with **99.7% alignment** (Silhouette score peaked at $k=2$).
 - **KMeans++ ($k=6$):** Evaluated against the 6 actual activities, yielding an **Adjusted Rand Index (ARI) of 0.420** and **Normalized Mutual Information (NMI) of 0.559**. Static classes (`SITTING` and `STANDING`) overlap substantially in unsupervised space.
-- **DBSCAN:** Executed on a 10-dimensional PCA representation with $k$-distance estimation ($\text{eps} = 1.83, \text{min\_samples} = 10$). Discovered **5 dense clusters** and identified **371 noise/boundary transition points** ($\text{ARI} = 0.320$).
+- **DBSCAN:** Executed on a 10-dimensional PCA representation with $k$-distance estimation ($\text{eps} = 6.03, \text{min\_samples} = 10$). Discovered **5 dense clusters** and identified **371 noise/boundary transition points** ($\text{ARI} = 0.320$).
 
 ### 3. Feature Selection (Forward & Backward SFS)
 - **Shortlisting:** Pre-filtered collinear feature pairs ($r > 0.95$), reducing 561 features to 253, and selected the top 30 candidates using ANOVA F-statistic (`SelectKBest`).
@@ -102,7 +102,7 @@ flowchart TD
 
 ## 🏆 Final Benchmark Leaderboard
 
-| Rank | Feature Set | Model Architecture | Features | Test Accuracy | Macro F1 | Training Time |
+| Rank | Feature Set | Model Architecture | Features | Test Accuracy | Macro F1 | Time |
 |:---:|:---|:---|:---:|:---:|:---:|:---:|
 | 🥇 | **All Features** | **Ensemble - Soft Voting** | **561** | **95.96%** | **0.9588** | 16.60s |
 | 🥈 | **All Features** | **Ensemble - Hard Voting** | **561** | **95.93%** | **0.9588** | 16.60s |
@@ -117,6 +117,8 @@ flowchart TD
 | 11 | Backward SFS | Support Vector Machine (RBF) | 15 | 87.51% | 0.8731 | 0.50s |
 | 12 | Backward SFS | Logistic Regression | 15 | 86.73% | 0.8662 | 0.15s |
 | 13 | All Features | Decision Tree | 561 | 86.22% | 0.8595 | 3.10s |
+
+> **Note on Time:** For single models, the recorded time includes both model training (`fit`) and test prediction (`predict`). For voting ensembles, it reflects training time only.
 
 ---
 
@@ -134,8 +136,6 @@ A detailed inspection of the best single model's confusion matrix revealed:
 
 ```text
 ├── HAR_ML_Pipeline.ipynb     # Complete, self-contained ML pipeline notebook
-├── Project_Presentation.md   # Complete 12-slide presentation deck
-├── presentation.html         # Interactive web-based slide deck (open in any browser)
 ├── train.csv                 # 7,352 labeled training observations
 ├── test.csv                  # 2,947 labeled evaluation observations
 └── README.md                 # Full project documentation & findings
