@@ -4,7 +4,7 @@
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.2%2B-orange.svg)](https://scikit-learn.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-**Course Project:** Practical Applications of AI & Machine Learning (PAIML Lab)  
+**Course Project:** Programming for AI & Machine Learning (PAIML Lab)  
 **Project Title:** End-to-End Human Activity Recognition Pipeline  
 **Students:** Kartikeya Jain & Ayush Yadav  
 **Course Instructors:** Dr. Pruthwik Mishra & Dr. Praveen Chandaliya  
